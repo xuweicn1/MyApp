@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+   <body>
+       <h1>学生表</h1>
+       <hr>
+      <table border = 1>
+         <thead>
+            <td>姓名</td>
+            <td>地址</td>
+            <td>城市</td>
+            <td>区号</td>
+         </thead>
+         
+         {% for row in rows %}
+            <tr>
+               <td>{{row["name"]}}</td>
+               <td>{{row["addr"]}}</td>
+               <td> {{ row["city"]}}</td>
+               <td>{{row['pin']}}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+      <br>
+      <a href = "/">返回主页</a>
+   </body>
+</html>

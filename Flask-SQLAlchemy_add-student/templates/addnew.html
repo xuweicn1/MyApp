@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h3>学生信息表</h3>
+      <hr/>
+      
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">姓名</label><br>
+         <input type = "text" name = "name" placeholder = "张三" /><br><br>
+
+         <label for = "city">城市</label><br>
+         <input type = "text" name = "city" placeholder = "北京" /><br><br>
+
+         <label for = "addr">地址</label><br>
+         <textarea name = "addr" placeholder = "朝阳区大望路"></textarea><br><br>
+
+         <label for = "PIN">邮编</label><br>
+         <input type = "text" name = "pin" placeholder = "100000" /><br><br>
+
+         <input type = "submit" value = "输入" />
+      </form>
+      <h3><a href="{{ url_for('home') }}">返回主页</a></h3>
+   </body>
+</html>
